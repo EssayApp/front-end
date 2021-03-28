@@ -6,7 +6,9 @@ import Tab from "@material-ui/core/Tab";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import HomeIcon from "@material-ui/icons/Home";
+// import Link from "@material-ui/core/Link";
 import { Link } from "react-router-dom";
+
 import "./Navigation.css";
 
 const useStyles = makeStyles({
@@ -26,42 +28,36 @@ function Navigation() {
 
     return (
         <Paper square className={classes.root}>
-            <Link style={{ textDecoration: "none", color: "inherit" }}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    variant="fullWidth"
-                    indicatorColor="secondary"
-                    textColor="primary"
-                    aria-label="icon label tabs example"
-                    centered
-                >
-                    {/* <div className="Nav"> */}
-                        <Link
-                            to="/"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                        >
-                            <Tab icon={<HomeIcon />} label="HOME" />
-                        </Link>
-                        <Link
-                            to="/form"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                        >
-                            <Tab
-                                icon={<LibraryBooksIcon />}
-                                label="FORM"
-                                indicatorColor="primary"
-                            />
-                        </Link>
-                        <Link
-                            to="/sign-in"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                        >
-                            <Tab icon={<PersonPinIcon />} label="MEMBERS" />
-                        </Link>
-                    {/* </div> */}
-                </Tabs>
-            </Link>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                variant="fullWidth"
+                indicatorColor="secondary"
+                textColor="primary"
+                aria-label="icon label tabs example"
+                centered
+            >
+                <div className="Nav">
+                    <Link
+                        to="/"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                        <Tab icon={<HomeIcon />} label="HOME" />
+                    </Link>
+                    <Link
+                        to="/form"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                        <Tab icon={<LibraryBooksIcon />} label="FORM" />
+                    </Link>
+                    <Link
+                        to="/sign-in"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                        <Tab icon={<PersonPinIcon />} label="MEMBERS" />
+                    </Link>
+                </div>
+            </Tabs>
         </Paper>
     );
 }
