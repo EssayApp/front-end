@@ -9,11 +9,10 @@ import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-
 const useStyles = makeStyles({
     root: {
-        flexGrow: 1,
-        // maxWidth: 500
+        flexGrow: 1
+        // maxWidth: 3000
     }
 });
 
@@ -27,27 +26,42 @@ function Navigation() {
 
     return (
         <Paper square className={classes.root}>
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                variant="fullWidth"
-                indicatorColor="secondary"
-                textColor="secondary"
-                aria-label="icon label tabs example"
-                centered
-            >
-                <div className="Nav">
-                    <Link to="/">
-                        <Tab icon={<HomeIcon />} label="HOME" />
-                    </Link>
-                    <Link to="/form">
-                        <Tab icon={<LibraryBooksIcon />} label="FORM" />
-                    </Link>
-                    <Link to="/sign-in">
-                        <Tab icon={<PersonPinIcon />} label="MEMBERS" />
-                    </Link>
-                </div>
-            </Tabs>
+            <Link style={{ textDecoration: "none", color: "inherit" }}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    variant="fullWidth"
+                    indicatorColor="secondary"
+                    textColor="primary"
+                    aria-label="icon label tabs example"
+                    centered
+                >
+                    {/* <div className="Nav"> */}
+                        <Link
+                            to="/"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                            <Tab icon={<HomeIcon />} label="HOME" />
+                        </Link>
+                        <Link
+                            to="/form"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                            <Tab
+                                icon={<LibraryBooksIcon />}
+                                label="FORM"
+                                indicatorColor="primary"
+                            />
+                        </Link>
+                        <Link
+                            to="/sign-in"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                            <Tab icon={<PersonPinIcon />} label="MEMBERS" />
+                        </Link>
+                    {/* </div> */}
+                </Tabs>
+            </Link>
         </Paper>
     );
 }
