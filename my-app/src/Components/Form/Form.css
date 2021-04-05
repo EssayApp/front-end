@@ -1,0 +1,16 @@
+.ui_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.field {
+    color: black;
+    margin: 20px 50px 50px;
+}
+
+.three_fields {
+    margin: 100px 50px 50px;
+    padding: auto;
+}
