@@ -56,6 +56,16 @@ const useStyles = makeStyles(theme => ({
     },
     submit: {
         margin: theme.spacing(3, 0, 2)
+    },
+    textBoxes: {
+        display: "flex",
+        flexDirection: "column",
+        width: 300
+    },
+    emailAreas: {
+        display: "flex",
+        flexDirection: "column",
+        width: 500
     }
 }));
 
@@ -82,80 +92,101 @@ function SignUp() {
                     <Typography component="h1" variant="h5">
                         Sign up
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <form
+                        // style={{ display: "flex", flexDirection: "column" }}
+                        className={classes.form}
+                        noValidate
+                    >
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth
+                            // fullWidth
                             id="first"
                             label="First Name"
                             name="First Name"
                             autoComplete="First Name"
                             autoFocus
+                            className={classes.textBoxes}
+                            noValidate
                         />
+                        <br></br>
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth
+                            // fullWidth
                             id="last"
                             label="Last Name"
                             name="last"
                             autoComplete="last"
                             autoFocus
+                            className={classes.textBoxes}
+                            noValidate
                         />
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth
+                            // fullWidth
                             id="email"
                             label="Email Address"
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            className={classes.emailAreas}
+                            noValidate
                         />
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth
+                            // fullWidth
                             name="password"
                             label="Password"
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            className={classes.emailAreas}
+                            noValidate
                         />
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth
+                            // fullWidth
                             name="confirm password"
                             label="Confirm Password"
-                            type="confirm password"
-                            id="confirm password"
+                            type="password"
+                            id="password"
                             autoComplete="current-password"
+                            className={classes.emailAreas}
+                            noValidate
                         />
+                        <br></br>
+                        <br></br>
                         <FormControlLabel
                             control={
                                 <Checkbox value="remember" color="primary" />
                             }
                             label="I accept the "
                         />
-                        <Link href="#" variant="body2">
+                        <Link href="#" variant="body">
                             {"terms of service"}
                         </Link>
+                        <br></br>
+                        <br></br>
                         <Button
                             type="submit"
-                            fullWidth
+                            // fullWidth
                             variant="contained"
                             color="primary"
                             className={classes.submit}
                         >
                             Sign Up
                         </Button>
+                        <br></br>
+                        <br></br>
                         <Grid container>
                             {/* <Grid item xs>
                                 <Link href="#" variant="body2">
@@ -163,7 +194,7 @@ function SignUp() {
                                 </Link>
                             </Grid> */}
                             <Grid item>
-                                <Link href="sign-in" variant="body2">
+                                <Link href="sign-in" variant="body">
                                     {"Have an account? Sign In"}
                                 </Link>
                             </Grid>
