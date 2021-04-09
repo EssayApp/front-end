@@ -9,6 +9,7 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 // import { render } from "react-dom";
 
 import "./Form.css";
+import { Height } from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -18,8 +19,13 @@ const useStyles = makeStyles(theme => ({
     textField: {
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
-        width: 200
+        width: 350
+    },
+    TextareaAutosize: {
+        width: 1200,
+        height: 600
     }
+    
 }));
 
 const Form = () => {
@@ -83,10 +89,7 @@ const Form = () => {
             </form>
             <br></br>
             <TextareaAutosize
-                aria-label="minimum height"
-                rowsMin={5}
                 placeholder="Insert Essay Text Here..."
-                // placeholder="Minimum 3 rows"
                 variant="outlined"
                 margin="normal"
                 required
@@ -96,6 +99,7 @@ const Form = () => {
                 name="text"
                 autoComplete="text"
                 autoFocus
+                className={classes.TextareaAutosize}
             />
             <br></br>
             <Button
